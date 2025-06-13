@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Kashika V</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f8ff;
+      color: #023047;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0077b6;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+    }
+
+    form {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: #034f84;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 12px 15px;
+      border: 2px solid #0077b6;
+      border-radius: 8px;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #023047;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    button {
+      background-color: #0077b6;
+      color: white;
+      padding: 14px 20px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005f8d;
+    }
+
+    .contact-info {
+      margin-top: 40px;
+      background: white;
+      padding: 20px 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact-info h2 {
+      color: #0077b6;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .contact-info p {
+      font-size: 1.1rem;
+      margin: 8px 0;
+      color: #034f84;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        margin: 20px 15px;
+      }
+      form, .contact-info {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contact Me</h1>
+
+  <form action="#" method="post">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="contact-info">
+    <h2>Other Ways to Reach Me</h2>
+    <p><strong>Email:</strong> <a href="mailto:kashika@example.com">kashikavenkatesan@gmail.com</a></p>
+    <p><strong>Phone:</strong> +91 6369359242</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kashika-venkatesan-991550331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">linkedin.com/in/kashika-v</a></p>
+  </div>
+
+</body>
+</html>

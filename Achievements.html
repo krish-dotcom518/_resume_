@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Achievements - Kashika V</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #023047;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0077b6;
+      font-size: 3rem;
+      margin-bottom: 50px;
+      font-weight: 700;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+      padding: 25px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .icon {
+      font-size: 3.5rem;
+      color: #0077b6;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #023047;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      color: #034f84;
+      line-height: 1.5;
+    }
+
+    .back-btn {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .back-btn a {
+      text-decoration: none;
+      background-color: #0077b6;
+      color: white;
+      padding: 14px 35px;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+
+    .back-btn a:hover {
+      background-color: #005f8d;
+    }
+
+    @media (max-width: 400px) {
+      .card {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Achievements</h1>
+
+  <div class="grid-container">
+    <div class="card">
+      <div class="icon">🏆</div>
+      <div class="title">Academic Excellence Award</div>
+      <div class="description">
+        Awarded with a shield by SRM Institute for securing top grades in 11th standard with over 97% marks in all subjects.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎖️</div>
+      <div class="title">Cash Awards</div>
+      <div class="description">
+        Recognized and appreciated with cash awards and trophies for outstanding academic performances. Also won many certificates, cash awards, and a gold coin for devotional song recitation during schooling.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon">📜</div>
+      <div class="title">Certificate in Japanese Course Completion</div>
+      <div class="description">
+        Secured A+ grade (88%) in Japanese course examination conducted by Department of English, Center for International Relations, Anna University.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon">📝</div>
+      <div class="title">Technical Articles Published</div>
+      <div class="description">
+        Authored two technical articles:<br>
+        1. <strong>Integration of Remote Sensing and Machine Learning in Climate Change Studies</strong> – department newsletter.<br>
+        2. <strong>Integrated Spatial Analysis for Renewable Energy Site Suitability Using Multisource Data Fusion</strong> – department’s annual article.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🤝</div>
+      <div class="title">Team Leadership</div>
+      <div class="description">
+        As Joint Secretary (2024-2025), organised and led student teams for cultural and technical events.
+      </div>
+    </div>
+  </div>
+
+  <div class="back-btn">
+    <a href="index.html">⬅️ Back to Portfolio</a>
+  </div>
+
+</body>
+</html>
