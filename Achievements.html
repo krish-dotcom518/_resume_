@@ -18,8 +18,30 @@
       text-align: center;
       color: #0077b6;
       font-size: 3rem;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
       font-weight: 700;
+    }
+
+    .edit-save-btns {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .edit-save-btns button {
+      padding: 6px 14px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #0077b6;
+      color: white;
+      transition: background 0.3s ease;
+    }
+
+    .edit-save-btns button:hover {
+      background-color: #005f8d;
     }
 
     .grid-container {
@@ -96,7 +118,12 @@
 
   <h1>Achievements</h1>
 
-  <div class="grid-container">
+  <div class="edit-save-btns">
+    <button id="editBtn">Edit</button>
+    <button id="saveBtn" style="display:none;">Save</button>
+  </div>
+
+  <div class="grid-container" id="gridContainer">
     <div class="card">
       <div class="icon">🏆</div>
       <div class="title">Academic Excellence Award</div>
@@ -143,6 +170,31 @@
   <div class="back-btn">
     <a href="index.html">⬅️ Back to Portfolio</a>
   </div>
+
+  <script>
+    const editBtn = document.getElementById('editBtn');
+    const saveBtn = document.getElementById('saveBtn');
+    const gridContainer = document.getElementById('gridContainer');
+
+    // Load saved content
+    if(localStorage.getItem('gridContent')) gridContainer.innerHTML = localStorage.getItem('gridContent');
+
+    editBtn.addEventListener('click', () => {
+      const currentContent = gridContainer.innerHTML;
+      gridContainer.innerHTML = `<textarea id="editArea" style="width:100%; min-height:500px;">${currentContent}</textarea>`;
+      editBtn.style.display = 'none';
+      saveBtn.style.display = 'inline-block';
+    });
+
+    saveBtn.addEventListener('click', () => {
+      const newContent = document.getElementById('editArea').value;
+      gridContainer.innerHTML = newContent;
+      localStorage.setItem('gridContent', newContent);
+
+      saveBtn.style.display = 'none';
+      editBtn.style.display = 'inline-block';
+    });
+  </script>
 
 </body>
 </html>

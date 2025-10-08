@@ -18,7 +18,29 @@
       text-align: center;
       color: #0077b6;
       font-size: 2.8rem;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+    }
+
+    .edit-save-btns {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .edit-save-btns button {
+      padding: 6px 14px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #0077b6;
+      color: white;
+      transition: background 0.3s ease;
+    }
+
+    .edit-save-btns button:hover {
+      background-color: #005f8d;
     }
 
     .project {
@@ -54,7 +76,6 @@
       font-weight: 600;
     }
 
-    /* Back to portfolio button */
     .back-btn {
       margin-top: 50px;
       text-align: center;
@@ -86,88 +107,138 @@
         font-size: 1rem;
       }
     }
+
+    /* Editable highlight */
+    .editable {
+      outline: 2px dashed #0077b6;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
   </style>
 </head>
 <body>
 
   <h1>My Projects</h1>
 
-  <div class="project">
-    <div class="project-title">Land Use/Land Cover Classification of Kancheepuram District</div> 
-    <div class="project-description">
-      Conducted time-series land use and land cover classification between 2015 and 2025 using Sentinel-2 and Landsat satellite data. 
-      Utilized Google Earth Engine for data analysis and change detection to study environmental transformations.
+  <div class="edit-save-btns">
+    <button id="editBtn">Edit</button>
+    <button id="saveBtn" style="display:none;">Save</button>
+  </div>
+
+  <div id="projectsContent">
+    <div class="project">
+      <div class="project-title editable">Land Use/Land Cover Classification of Kancheepuram District</div> 
+      <div class="project-description editable">
+        Conducted time-series land use and land cover classification between 2015 and 2025 using Sentinel-2 and Landsat satellite data. 
+        Utilized Google Earth Engine for data analysis and change detection to study environmental transformations.
+      </div>
+      <div class="project-tech editable">Technologies: Google Earth Engine, JavaScript, Sentinel-2, Landsat, ChatGPT</div> 
     </div>
-    <div class="project-tech">Technologies: Google Earth Engine, JavaScript, Sentinel-2, Landsat, ChatGPT</div> 
-  </div>
 
-  <div class="project">
-    <div class="project-title">Assessment of Vegetation Stress Levels Using NDVI from Sentinel-2 in Three Agricultural Micro-Regions</div> 
-    <div class="project-description">
-      NDVI-based crop health monitoring in an various regions of Bangalore district using Sentinel-2 data in Google Earth Engine, implemented with JavaScript. 
+    <div class="project">
+      <div class="project-title editable">Assessment of Vegetation Stress Levels Using NDVI from Sentinel-2 in Three Agricultural Micro-Regions</div> 
+      <div class="project-description editable">
+        NDVI-based crop health monitoring in an various regions of Bangalore district using Sentinel-2 data in Google Earth Engine, implemented with JavaScript. 
+      </div>
+      <div class="project-tech editable">Technologies: Google Earth Engine, Sentinel-2, NDVI, JavaScript, ChatGPT</div> 
     </div>
-    <div class="project-tech">Technologies: Google Earth Engine, Sentinel-2, NDVI, JavaScript, ChatGPT</div> 
-  </div>
 
-  <div class="project">
-    <div class="project-title">Air Quality Visualization in Delhi before and after lockdown</div> 
-    <div class="project-description">
-      Visualization of NO₂ and CO level variations in Delhi during lockdown and unlock phases using Sentinel-SP data in Google Earth Engine.
+    <div class="project">
+      <div class="project-title editable">Air Quality Visualization in Delhi before and after lockdown</div> 
+      <div class="project-description editable">
+        Visualization of NO₂ and CO level variations in Delhi during lockdown and unlock phases using Sentinel-SP data in Google Earth Engine.
+      </div>
+      <div class="project-tech editable">Technologies: Google Earth Engine, JavaScript, ChatGPT, Sentinel-SP</div> 
     </div>
-    <div class="project-tech">Technologies: Google Earth Engine, JavaScript, ChatGPT, Sentinel-SP</div> 
-  </div>
 
-  <div class="project">
-    <div class="project-title">Urban Heat Island (UHI) Detection</div>
-    <div class="project-description">
-      Mapping Urban Heat Island effect in Kancheepuram using Landsat thermal imagery processed in Google Earth Engine. 
+    <div class="project">
+      <div class="project-title editable">Urban Heat Island (UHI) Detection</div>
+      <div class="project-description editable">
+        Mapping Urban Heat Island effect in Kancheepuram using Landsat thermal imagery processed in Google Earth Engine. 
+      </div>
+      <div class="project-tech editable">Technologies: Google Earth Engine, JavaScript, Landsat Thermal Imagery, ChatGPT</div> 
     </div>
-    <div class="project-tech">Technologies: Google Earth Engine, JavaScript, Landsat Thermal Imagery, ChatGPT</div> 
-  </div>
 
-  <div class="project">
-    <div class="project-title">Terrain Mapping and Analysis of J&K</div>
-    <div class="project-description">
-      Terrain mapping and analysis of Jammu & Kashmir using SRTM DEM data in QGIS, focusing on elevation, slope, aspect and contour map.
+    <div class="project">
+      <div class="project-title editable">Terrain Mapping and Analysis of J&K</div>
+      <div class="project-description editable">
+        Terrain mapping and analysis of Jammu & Kashmir using SRTM DEM data in QGIS, focusing on elevation, slope, aspect and contour map.
+      </div>
+      <div class="project-tech editable">Technologies: QGIS(Quantum GIS), ChatGPT, SRTM DEM Data</div>
     </div>
-    <div class="project-tech">Technologies: QGIS(Quantum GIS), ChatGPT, SRTM DEM Data</div>
-  </div>
 
-<div class="project">
-    <div class="project-title">Population Accessibility Analysis to Hospital Service Zones</div>
-    <div class="project-description">
-      Analyzed population accessibility to hospital service zones in Delhi using GEE, focusing on service area analysis which computes how many people are potentially served and how many remain underserved, highlighting spatial ineqalities in healthcasre access.
-    </div> 
-    <div class="project-tech">Technologies: Google Earth Engine, JavaScript, GPWv4 Dataset, ChatGPT</div>
-  </div>
+    <div class="project">
+      <div class="project-title editable">Population Accessibility Analysis to Hospital Service Zones</div>
+      <div class="project-description editable">
+        Analyzed population accessibility to hospital service zones in Delhi using GEE, focusing on service area analysis which computes how many people are potentially served and how many remain underserved, highlighting spatial ineqalities in healthcasre access.
+      </div> 
+      <div class="project-tech editable">Technologies: Google Earth Engine, JavaScript, GPWv4 Dataset, ChatGPT</div>
+    </div>
 
-  <div class="project">
-    <div class="project-title">Online Calculator</div>
-    <div class="project-description">
-      Developed a simple online calculator where it performs basic arithmetic operations like addition, subtraction, multiplication, and division and basic scientific operations like square root, power, logarithmetic and trigonometric functions.
-    </div> 
-    <div class="project-tech">Technologies: HTML, JavaScript, CSS, ChatGPT</div>
-  </div>
+    <div class="project">
+      <div class="project-title editable">Online Calculator</div>
+      <div class="project-description editable">
+        Developed a simple online calculator where it performs basic arithmetic operations like addition, subtraction, multiplication, and division and basic scientific operations like square root, power, logarithmetic and trigonometric functions.
+      </div> 
+      <div class="project-tech editable">Technologies: HTML, JavaScript, CSS, ChatGPT</div>
+    </div>
 
-  <div class="project">
-    <div class="project-title">Whack-a-Mole game</div>
-    <div class="project-description">
-      Developed a simple Whack-a-Mole gaming website where the player has to click on the moles that appear randomly on the screen within a time limit. The game keeps track of the score and displays it at the end.
-    </div> 
-    <div class="project-tech">Technologies: HTML, JavaScript, CSS, ChatGPT</div>
-  </div>
+    <div class="project">
+      <div class="project-title editable">Whack-a-Mole game</div>
+      <div class="project-description editable">
+        Developed a simple Whack-a-Mole gaming website where the player has to click on the moles that appear randomly on the screen within a time limit. The game keeps track of the score and displays it at the end.
+      </div> 
+      <div class="project-tech editable">Technologies: HTML, JavaScript, CSS, ChatGPT</div>
+    </div>
 
-  <div class="project">
-    <div class="project-title">Covid Tracker</div>
-    <div class="project-description">
-      Developed a Covid Tracker that provides real-time information on Covid-19 cases, recoveries, and deaths globally. It uses an API to fetch the latest data and displays it in a user-friendly format.
-    </div> 
-    <div class="project-tech">Technologies: Python and its libraries such as Requests, Pandas and Matplotlib, ChatGPT</div>
+    <div class="project">
+      <div class="project-title editable">Covid Tracker</div>
+      <div class="project-description editable">
+        Developed a Covid Tracker that provides real-time information on Covid-19 cases, recoveries, and deaths globally. It uses an API to fetch the latest data and displays it in a user-friendly format.
+      </div> 
+      <div class="project-tech editable">Technologies: Python and its libraries such as Requests, Pandas and Matplotlib, ChatGPT</div>
+    </div>
   </div>
 
   <div class="back-btn">
     <a href="index.html">⬅️ Back to Portfolio</a>
   </div>
+
+  <script>
+    const editBtn = document.getElementById('editBtn');
+    const saveBtn = document.getElementById('saveBtn');
+
+    // Load saved content
+    const savedContent = JSON.parse(localStorage.getItem('projectsContent'));
+    if(savedContent) {
+      const items = document.querySelectorAll('.editable');
+      items.forEach((el, i) => {
+        el.textContent = savedContent[i];
+      });
+    }
+
+    editBtn.addEventListener('click', () => {
+      document.querySelectorAll('.editable').forEach(el => {
+        el.setAttribute('contenteditable', 'true');
+        el.style.backgroundColor = '#e0e0ff';
+      });
+      editBtn.style.display = 'none';
+      saveBtn.style.display = 'inline-block';
+    });
+
+    saveBtn.addEventListener('click', () => {
+      const items = document.querySelectorAll('.editable');
+      const contentArray = [];
+      items.forEach(el => {
+        el.removeAttribute('contenteditable');
+        el.style.backgroundColor = 'transparent';
+        contentArray.push(el.textContent);
+      });
+      localStorage.setItem('projectsContent', JSON.stringify(contentArray));
+      saveBtn.style.display = 'none';
+      editBtn.style.display = 'inline-block';
+    });
+  </script>
 
 </body>
 </html>

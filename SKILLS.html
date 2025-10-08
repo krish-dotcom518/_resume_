@@ -20,7 +20,29 @@
       color: #0077b6;
       text-align: center;
       font-size: 2.8rem;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .edit-save-btns {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .edit-save-btns button {
+      padding: 6px 14px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #0077b6;
+      color: white;
+      transition: background 0.3s ease;
+    }
+
+    .edit-save-btns button:hover {
+      background-color: #005f8d;
     }
 
     .section {
@@ -58,13 +80,11 @@
       justify-content: center;
     }
 
-    /* Icons style */
     .icon {
       font-size: 1.4rem;
       color: #0077b6;
     }
 
-    /* Back to portfolio button */
     .back-btn {
       margin-top: 50px;
       text-align: center;
@@ -94,53 +114,103 @@
         min-width: auto;
       }
     }
+
+    /* Editable highlight */
+    .editable {
+      outline: 2px dashed #0077b6;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
   </style>
 </head>
 <body>
 
   <h1>Skills & Tools</h1>
 
-  <section class="section">
-    <h2>Technical Skills</h2>
-    <ul class="skills-list">
-      <li><span class="icon">🛰️</span> ENVI</li>
-      <li><span class="icon">☁️</span> Google Earth Engine (GEE)</li>
-      <li><span class="icon">🗺️</span> QGIS</li>
-      <li><span class="icon">📊</span> ArcGIS Pro</li>
-      <li><span class="icon">🌄</span> ERDAS Imagine</li>
-      <li><span class="icon">📡</span> Remote Sensing</li>
-      <li><span class="icon">📐</span> Traditional & Modern Surveying</li>
-      <li><span class="icon">💾</span> SDBMS, SQL</li>
-    </ul>
-  </section>
+  <div class="edit-save-btns">
+    <button id="editBtn">Edit</button>
+    <button id="saveBtn" style="display:none;">Save</button>
+  </div>
 
-  <section class="section">
-    <h2>Programming Skills</h2>
-    <ul class="programming-list">
-      <li><span class="icon">🐍</span> Python</li>
-      <li><span class="icon">🟨</span> JavaScript</li>
-      <li><span class="icon">🌐</span> HTML</li>
-      <li><span class="icon">⚙️</span> C++</li>
-      <li><span class="icon">🔵</span> C</li>
-    </ul>
-  </section>
+  <div id="skillsContent">
+    <section class="section">
+      <h2 class="editable">Technical Skills</h2>
+      <ul class="skills-list">
+        <li class="editable"><span class="icon">🛰️</span> ENVI</li>
+        <li class="editable"><span class="icon">☁️</span> Google Earth Engine (GEE)</li>
+        <li class="editable"><span class="icon">🗺️</span> QGIS</li>
+        <li class="editable"><span class="icon">📊</span> ArcGIS Pro</li>
+        <li class="editable"><span class="icon">🌄</span> ERDAS Imagine</li>
+        <li class="editable"><span class="icon">📡</span> Remote Sensing</li>
+        <li class="editable"><span class="icon">📐</span> Traditional & Modern Surveying</li>
+        <li class="editable"><span class="icon">💾</span> SDBMS, SQL</li>
+      </ul>
+    </section>
 
-  <section class="section">
-    <h2>Soft Skills</h2>
-    <ul class="soft-list">
-      <li><span class="icon">🤝</span> Team Collaboration</li>
-      <li><span class="icon">🗣️</span> Communication Skills</li>
-      <li><span class="icon">🎯</span> Problem Solving</li>
-      <li><span class="icon">⏳</span> Time Management</li>
-      <li><span class="icon">👁️</span> Keen Observation</li>
-      <li><span class="icon">😀</span> Adaptability & Positive Attitude</li>
-      <li><span class="icon">📋</span> Organizing Skills</li>
-    </ul>
-  </section>
+    <section class="section">
+      <h2 class="editable">Programming Skills</h2>
+      <ul class="programming-list">
+        <li class="editable"><span class="icon">🐍</span> Python</li>
+        <li class="editable"><span class="icon">🟨</span> JavaScript</li>
+        <li class="editable"><span class="icon">🌐</span> HTML</li>
+        <li class="editable"><span class="icon">⚙️</span> C++</li>
+        <li class="editable"><span class="icon">🔵</span> C</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="editable">Soft Skills</h2>
+      <ul class="soft-list">
+        <li class="editable"><span class="icon">🤝</span> Team Collaboration</li>
+        <li class="editable"><span class="icon">🗣️</span> Communication Skills</li>
+        <li class="editable"><span class="icon">🎯</span> Problem Solving</li>
+        <li class="editable"><span class="icon">⏳</span> Time Management</li>
+        <li class="editable"><span class="icon">👁️</span> Keen Observation</li>
+        <li class="editable"><span class="icon">😀</span> Adaptability & Positive Attitude</li>
+        <li class="editable"><span class="icon">📋</span> Organizing Skills</li>
+      </ul>
+    </section>
+  </div>
 
   <div class="back-btn">
     <a href="index.html">⬅️ Back to Portfolio</a>
   </div>
+
+  <script>
+    const editBtn = document.getElementById('editBtn');
+    const saveBtn = document.getElementById('saveBtn');
+
+    // Load saved content
+    const savedSkills = JSON.parse(localStorage.getItem('skillsContent'));
+    if(savedSkills) {
+      const items = document.querySelectorAll('.editable');
+      items.forEach((el, i) => {
+        el.textContent = savedSkills[i];
+      });
+    }
+
+    editBtn.addEventListener('click', () => {
+      document.querySelectorAll('.editable').forEach(el => {
+        el.setAttribute('contenteditable', 'true');
+        el.style.backgroundColor = '#e0e0ff';
+      });
+      editBtn.style.display = 'none';
+      saveBtn.style.display = 'inline-block';
+    });
+
+    saveBtn.addEventListener('click', () => {
+      const items = document.querySelectorAll('.editable');
+      const contentArray = [];
+      items.forEach(el => {
+        el.removeAttribute('contenteditable');
+        el.style.backgroundColor = 'transparent';
+        contentArray.push(el.textContent);
+      });
+      localStorage.setItem('skillsContent', JSON.stringify(contentArray));
+      saveBtn.style.display = 'none';
+      editBtn.style.display = 'inline-block';
+    });
+  </script>
 
 </body>
 </html>
